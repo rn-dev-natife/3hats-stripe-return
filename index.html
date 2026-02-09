@@ -4,18 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Return to 3Hats</title>
-  <meta http-equiv="refresh" content="0;url=threehatsapp://return" />
   <style>
-    body{font-family:-apple-system,system-ui,sans-serif;margin:0;padding:24px;text-align:center;background:#fff}
-    h1{font-size:24px;margin:40px 0 16px;color:#111}
-    .btn{display:inline-block;margin:16px 0;padding:12px 24px;border-radius:8px;background:#007aff;color:#fff;text-decoration:none;font-size:17px;font-weight:600}
-    p{color:#666;margin:8px 0}
+    body {
+      font-family: -apple-system, system-ui, sans-serif;
+      margin: 0;
+      padding: 24px;
+      text-align: center;
+      background: #fff;
+    }
+    h1 { font-size: 24px; margin: 40px 0 16px; color: #111; }
+    p  { color: #555; margin: 8px 0; }
+    .btn {
+      display: inline-block;
+      margin: 16px 0;
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: #007aff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
-  <h1>✓ Setup Complete</h1>
-  <p>If the app doesn't open automatically, tap the button below:</p>
-  <a class="btn" href="threehatsapp://return">Open 3Hats</a>
-  <p>Or close this page and return to the app manually.</p>
+  <h1>You're returning to 3Hats</h1>
+  <p>If the app doesn’t open automatically, tap the button below.</p>
+  <a class="btn" href="threehatsapp://return?fromStripe=1">Open 3Hats</a>
+  <p>Or close this page and go back to the app manually.</p>
+
+  <script>
+    try {
+      window.location.href = 'threehatsapp://return?fromStripe=1';
+    } catch (e) {}
+  </script>
 </body>
 </html>
