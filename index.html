@@ -30,12 +30,20 @@
 <body>
   <h1>You're returning to 3Hats</h1>
   <p>If the app doesn’t open automatically, tap the button below.</p>
-  <a class="btn" href="threehatsapp://return?fromStripe=1">Open 3Hats</a>
+  <a class="btn" id="openBtn" href="#">Open 3Hats</a>
   <p>Or close this page and go back to the app manually.</p>
 
   <script>
+    // Forward the `type` query param (e.g. ?type=subscription or ?type=connect)
+    // so the app knows which flow to resume.
+    var params = new URLSearchParams(window.location.search);
+    var type = params.get('type') || 'connect';
+    var deepLink = 'threehatsapp://return?fromStripe=1&type=' + encodeURIComponent(type);
+
+    document.getElementById('openBtn').href = deepLink;
+
     try {
-      window.location.href = 'threehatsapp://return?fromStripe=1';
+      window.location.href = deepLink;
     } catch (e) {}
   </script>
 </body>
